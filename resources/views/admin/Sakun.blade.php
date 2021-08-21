@@ -74,6 +74,7 @@
                 <th>No</th>
                 <th>Nama</th>
                 <th>Username</th> 
+                <th>Password</th> 
                 <th>Level</th> 
                 <th>Status</th> 
                 <th>Aksi</th>
@@ -87,6 +88,7 @@
                 <td>{{$no++}}</td>
                 <td>{{$value->nama_user}}</td>
                 <td>{{$value->username}}</td>
+                <td>{{$value->view_password}}</td>
                 <td>{{$value->level}}</td>
                 @if($value->status = "1" )
                 <td><span class="label label-primary">Aktif</span></td>
@@ -153,7 +155,8 @@
     function editPost(e) {
       var id  = $(e.target).data("id");
       console.log('id edit : ' + id);
-      let _url = `/admin/editAkun/${id}`;
+      var APP_URL = {!! json_encode(url('')) !!}
+      let _url = APP_URL + `/admin/editAkun/${id}`;
       $('#nameError').text('');
       $("#save").remove();
       $("#update").remove();

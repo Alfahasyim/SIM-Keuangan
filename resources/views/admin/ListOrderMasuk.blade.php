@@ -48,8 +48,8 @@
             <td>Rp.{{number_format($item->jumlah_total_laba_kotor)}}</td>  
             <td>Rp.{{number_format($item->jumlah_total_laba_bersih)}}</td>  
             <td>
-              <a href="/admin/ListOrderMasuk/{{$item->id}}/LM" target="_blank" class="btn btn-info" >Laporan Masuk</a> 
-              <a href="/admin/ListOrderMasuk/{{$item->id}}/LK" target="_blank" class="btn btn-info" >Laporan Keluar</i></a> 
+              <a href="{{route('admin.ListOrderMasuk')}}/{{$item->id}}/LM" target="_blank" class="btn btn-info" >Laporan Masuk</a> 
+              <a href="{{route('admin.ListOrderMasuk')}}/{{$item->id}}/LK" target="_blank" class="btn btn-info" >Laporan Keluar</i></a> 
               </button>
             </td> 
           </tr>

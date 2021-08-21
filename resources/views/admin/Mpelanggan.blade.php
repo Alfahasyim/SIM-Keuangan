@@ -131,7 +131,8 @@
     function editPost(e) {
       var id  = $(e.target).data("id");
       console.log('id edit : ' + id);
-      let _url = `/admin/editPelanggan/${id}`;
+      var APP_URL = {!! json_encode(url('')) !!}
+      let _url = APP_URL + `/admin/editPelanggan/${id}`;
       $('#nameError').text('');
       $("#save").remove();
       $("#update").remove();

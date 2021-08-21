@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIMANGAN | LOGIN</title>
-    <link href="inspinia/css/bootstrap.min.css" rel="stylesheet">
-    <link href="inspinia/font-awesome/css/font-awesome.css" rel="stylesheet">
-    <link href="inspinia/css/animate.css" rel="stylesheet">
-    <link href="inspinia/css/style.css" rel="stylesheet">
+    <link href="{{asset('inspinia/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('inspinia/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
+    <link href="{{asset('inspinia/css/animate.css')}}" rel="stylesheet">
+    <link href="{{asset('inspinia/css/style.css')}}" rel="stylesheet">
 
 </head>
 <body class="gray-bg">
@@ -20,7 +20,7 @@
       @endif
         <div>
             <div>
-                <img src="inspinia/images/Logo-keuangan.png" style="width:300px; height:150px; background-image:none" alt="">
+                <img src="{{asset('inspinia/images/Logo-keuangan.png')}}" style="width:300px; height:150px; background-image:none" alt="">
             </div>
             <h3>SELAMAT DATANG DI SIMANGAN</h3>
             <p>Aplikasi Pengelola Keuangan yang dapat memudahkan pekerjaan Anda
@@ -37,19 +37,19 @@
                 </div>
                 <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
             </form>
-            <p class="m-t"> <small>ALFA &copy; 2021</small> </p>
+            <p class="m-t"> <small>@Fahasyim2223 &copy; 2021</small> </p>
         </div>
     </div>
 
     <!-- Mainly scripts -->
-    <script src="inspinia/js/jquery-2.1.1.js"></script>
-    <script src="inspinia/js/bootstrap.min.js"></script>
-    <script src="inspinia/js/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="inspinia/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="{{asset('inspinia/js/jquery-2.1.1.js')}}"></script>
+    <script src="{{asset('inspinia/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('inspinia/js/plugins/metisMenu/jquery.metisMenu.js')}}"></script>
+    <script src="{{asset('inspinia/js/plugins/slimscroll/jquery.slimscroll.min.js')}}"></script>
 
     <!-- Custom and plugin javascript -->
-    <script src="inspinia/js/inspinia.js"></script>
-    <script src="inspinia/js/plugins/pace/pace.min.js"></script>
+    <script src="{{asset('inspinia/js/inspinia.js')}}"></script>
+    <script src="{{asset('inspinia/js/plugins/pace/pace.min.js')}}"></script>
 
 </body>
 </html>

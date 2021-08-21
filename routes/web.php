@@ -43,7 +43,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::post('admin/updatePelanggan/{id}','MpelangganController@updatePelanggan')->name('admin.updatePelanggan'); 
 
     // Barang
-    Route::get('admin/editBarang/{id}','MbarangController@editBarang');
+    Route::get('admin/editBarang/{id}','MbarangController@editBarang')->name('admin.editBarang');
     Route::get('admin/deleteBarang/{id}','MbarangController@deleteBarang');
     Route::post('admin/storeBarang','MbarangController@storeBarang')->name('admin.storeBarang');
     Route::post('admin/updateBarang/{id}','MbarangController@updateBarang')->name('admin.updateBarang'); 

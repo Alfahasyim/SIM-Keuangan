@@ -131,11 +131,12 @@
     function editPost(e) {
       var id  = $(e.target).data("id");
       console.log('id edit : ' + id);
-      let _url = `/admin/editBarang/${id}`;
+      var APP_URL = {!! json_encode(url('')) !!}
+      let _url = APP_URL + `/admin/editBarang/${id}`;
       $('#nameError').text('');
       $("#save").remove();
       $("#update").remove();
-      $('#modal-footer').append('<button type="button" onclick="updatePost(event)" data-id="'+id+'" id="update-'+id+'" class="btn btn-primary">Update</button>');
+      $('#modal-footer').append('<button type="button" onclick="updatePost(event)" data-id="'+id+'" id="update" class="btn btn-primary">Update</button>');
 
       $.ajax({
         url: _url,

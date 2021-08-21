@@ -7,11 +7,11 @@
 
     <title>INSPINIA | 404 Error</title>
 
-    <link href="inspinia/css/bootstrap.min.css" rel="stylesheet">
-    <link href="inspinia/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="{{asset('inspinia/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('inspinia/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
 
-    <link href="inspinia/css/animate.css" rel="stylesheet">
-    <link href="inspinia/css/style.css" rel="stylesheet">
+    <link href="{{asset('inspinia/css/animate.css')}}" rel="stylesheet">
+    <link href="{{asset('inspinia/css/style.css')}}" rel="stylesheet">
 
 </head>
 
@@ -31,8 +31,8 @@
     </div>
 
     <!-- Mainly scripts -->
-    <script src="inspinia/js/jquery-2.1.1.js"></script>
-    <script src="inspinia/js/bootstrap.min.js"></script>
+    <script src="{{asset('inspinia/js/jquery-2.1.1.js')}}"></script>
+    <script src="{{asset('inspinia/js/bootstrap.min.js')}}"></script>
 
 </body>
 

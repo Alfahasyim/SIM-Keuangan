@@ -143,7 +143,7 @@
         </div>
         <div class="footer"> 
           <div>
-            <strong>Copyright</strong> ALFA &copy; 2021
+            <strong>Copyright</strong> @Fahasyim2223 &copy; 2021
           </div>
         </div>
 
