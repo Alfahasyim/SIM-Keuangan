@@ -57,6 +57,9 @@
 	                    <li class="{{ set_active('keuangan.OrderMasuk') }}"><a href="{{route('keuangan.OrderMasuk')}}">Order Masuk</a></li>
 	                    <li class="{{ set_active('keuangan.ListOrderMasuk') }}"><a href="{{route('keuangan.ListOrderMasuk')}}">List Order Masuk</a></li>
                     </ul>
+                </li>
+                <li>
+                    <a href="{{route('logout')}}"><i class="fa fa-power-off"></i> <span class="nav-label">Logout</span></a>
                 </li>  
             </ul>
 

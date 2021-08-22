@@ -72,6 +72,9 @@
                         <li class="{{ set_active('admin.Sakun') }}"><a href="{{route('admin.Sakun')}}">Akun</a></li> 
                     </ul>
                 </li>  
+                <li>
+                    <a href="{{route('logout')}}"><i class="fa fa-power-off"></i> <span class="nav-label">Logout</span></a>
+                </li>
             </ul>
 
         </div>
