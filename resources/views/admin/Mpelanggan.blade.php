@@ -31,6 +31,12 @@
                                   <span id="nameError" class="alert-message"></span>
                                 </div>
                             </div>
+                            <div class="form-group"><label class="col-sm-2 control-label">Alamat</label>
+                              <div class="col-sm-10">
+                                <textarea class="form-control" name="alamat" id="alamat"></textarea> 
+                                <span id="nameError" class="alert-message"></span>
+                              </div>
+                            </div>
                             <div class="form-group"><label class="col-sm-2 control-label">Status</label>
                                 <div class="col-sm-10">
                                   <select class="form-control m-b" name="status" id="status">
@@ -53,6 +59,7 @@
             <tr>
                 <th>No</th>
                 <th>Nama Pelanggan</th>
+                <th>Alamat</th>
                 <th>Status</th>
                 <th>Edited by</th>
                 <th>Aksi</th>
@@ -65,6 +72,7 @@
             <tr id="row_{{$pelanggan->id_pelanggan}}">
                 <td>{{$no++}}</td>
                 <td>{{$pelanggan->nama_pelanggan}}</td>
+                <td>{{$pelanggan->alamat}}</td>
                 @if($pelanggan->status = "1" )
                 <td><span class="label label-primary">Aktif</span></td>
                 @else
@@ -92,7 +100,8 @@
   $('.delete').on('click', function(){
     var id  = $(this).val();
     // console.log('id delete : ' + id);
-    let _url = `/admin/deletePelanggan/${id}`;
+    var APP_URL = {!! json_encode(url('')) !!}
+    let _url = APP_URL + `/admin/deletePelanggan/${id}`;
     let _token   = $('meta[name="csrf-token"]').attr('content');
 
     if (confirm("Hapus Data?")) {
@@ -144,6 +153,7 @@
         success: function(response) {
           if(response){
             $('#nama').val(response.nama_pelanggan);
+            $('#alamat').val(response.alamat);
             console.log(response.nama_pelanggan);
             $('#myModal4').modal('show');
           }
@@ -154,11 +164,13 @@
     // update
     function updatePost(e){
       var id = $(e.target).data("id");
-      let _url = `/admin/updatePelanggan/${id}`;
+      var APP_URL = {!! json_encode(url('')) !!}
+      let _url = APP_URL + `/admin/updatePelanggan/${id}`;
 
       var fd;
       fd = new FormData();
       fd.append('nama_pelanggan', $('#nama').val());
+      fd.append('alamat', $('#alamat').val());
       fd.append('status', $('#status').val());
       fd.append('_token', '{{ csrf_token() }}');
 
@@ -244,11 +256,13 @@
       //store
       $('#save').click(function () {
         var nama_pelanggan = $('#nama').val();
+        var alamat = $('#alamat').val();
         var status = $('#status').val();
         var fd;
         fd = new FormData();
         // fd.append('id', $('#id').val());
         fd.append('nama_pelanggan', nama_pelanggan);
+        fd.append('alamat', alamat);
         fd.append('status', status);
         fd.append('_token', '{{ csrf_token() }}');
 
@@ -283,6 +297,7 @@
           },
           error: function (data) {
               console.log('Error:', data);
+              console.log(alamat);
               $('#myModal4').modal('hide');
               toastr.options = {
                   "closeButton": true,

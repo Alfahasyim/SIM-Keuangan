@@ -16,7 +16,7 @@
 <body class="white-bg">  
 	<center>
 		<div>
-      <img src="{{asset('../inspinia/images/kopsurat.png')}}" style="width:100%; background-image:none" alt="">
+      <img src="{{asset('inspinia/images/Kopsurat.PNG')}}" style="width:100%; background-image:none" alt="">
     </div>
   </center>
   <div class="wrapper wrapper-content p-xl">

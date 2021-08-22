@@ -25,7 +25,8 @@ class MpelangganController extends Controller
   }
 
   $data = array(
-      'nama_pelanggan'  => $request->nama_pelanggan,
+      'nama_pelanggan'  => $request->nama_pelanggan, 
+      'alamat'          => $request->alamat,
       'status'          => $request->status,
       'edited_by'       => Auth::user()->id,
       );
@@ -43,6 +44,7 @@ class MpelangganController extends Controller
   public function updatePelanggan($id, Request $request){
     $data = Mpelanggan::find($id);
     $data->nama_pelanggan = $request->nama_pelanggan;
+    $data->alamat         = $request->alamat; 
     $data->status         = $request->status;
     $data->edited_by      = Auth::user()->id;
     $data->save();

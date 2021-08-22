@@ -116,7 +116,8 @@
   $('.delete').on('click', function(){
     var id  = $(this).val();
     // console.log('id delete : ' + id);
-    let _url = `/admin/deleteAkun/${id}`;
+    var APP_URL = {!! json_encode(url('')) !!}
+    let _url = APP_URL + `/admin/deleteAkun/${id}`;
     let _token   = $('meta[name="csrf-token"]').attr('content');
 
     if (confirm("Hapus Data?")) {
@@ -180,7 +181,8 @@
     // update
     function updatePost(e){
       var id = $(e.target).data("id");
-      let _url = `/admin/updateAkun/${id}`;
+      var APP_URL = {!! json_encode(url('')) !!}
+      let _url = APP_URL + `/admin/updateAkun/${id}`;
 
       var fd;
       fd = new FormData();

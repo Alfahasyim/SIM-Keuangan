@@ -20,7 +20,7 @@
       @endif
         <div>
             <div>
-                <img src="{{asset('inspinia/images/Logo-keuangan.png')}}" style="width:300px; height:150px; background-image:none" alt="">
+                <img src="{{asset('inspinia/images/Logo-Keuangan.png')}}" style="width:300px; height:150px; background-image:none" alt="">
             </div>
             <h3>SELAMAT DATANG DI SIMANGAN</h3>
             <p>Aplikasi Pengelola Keuangan yang dapat memudahkan pekerjaan Anda
