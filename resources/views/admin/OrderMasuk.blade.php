@@ -38,9 +38,16 @@
         </div>
         <div class="ibox-content"> 
           <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-6">
               <div class="form-group">
                 <input type="text" class="form-control" disabled value="{{$no_order}}">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <div class="form-group">
+                <input type="text" class="form-control" name="add_cust_po_number" id="add_cust_po_number" placeholder="Customer PO Number">
               </div>
             </div> 
             <div class="col-md-3"> 
@@ -148,6 +155,7 @@
       <div class="ibox-content">
       <form id="form-store" method="post" action="{{route('admin.storeOrderMasuk')}}" name="form-observasi">
         {{ csrf_field() }}
+        <input type="hidden"   name="cust_po_number" id="cust_po_number"> 
         <input type="hidden" name="id_pelanggan" id="id_pelanggan"> 
         <input type="hidden" name="jenis_bayar" id="jenis_bayar"> 
         <input type="hidden" name="tanggal_order" id="tanggal_order" value="<?php echo date('Y-m-d'); ?>"> 
@@ -230,8 +238,14 @@
 
     }); 
 
+    $('#add_cust_po_number').keyup(function () {  
+      var cust_po_number    = $(this).val(); 
+
+      $('#cust_po_number').val(cust_po_number); 
+    }); 
+
     $('#add_id_pelanggan').change(function () { 
-      $('#id_pelanggan').val($(this).val()); 
+      $('#id_pelanggan').val($(this).val());  
     });
 
     $('#add_jenis_bayar').change(function () { 

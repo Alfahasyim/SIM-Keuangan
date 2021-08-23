@@ -26,7 +26,7 @@
 
           <div class="col-sm-6 text-right">
             <h4>Order Number</h4>
-            <h4 class="text-navy">{{$data_order->no_order}}</h4> 
+            <h4 class="text-navy">{{$data_order->cust_po_number}}</h4> 
             <p>
               <span><strong>Order Date:</strong>{{$data_order->tanggal_order}}</span><br/> 
             </p>

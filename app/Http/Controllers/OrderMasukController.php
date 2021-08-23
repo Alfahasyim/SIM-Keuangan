@@ -27,6 +27,7 @@ class OrderMasukController extends Controller
       $jumlah_laba_bersih = $jumlah_total_laba_kotor - $jumlah_biaya_operasional;
 
        $validator = Validator::make($request->all(),[  
+        'cust_po_number' => ['required'],
         'jenis_bayar' => ['required'],
         'tanggal_order' => ['required'],
         'kode_barang' => ['required'],
@@ -49,6 +50,7 @@ class OrderMasukController extends Controller
 
       $transaksi = [];
       $transaksi['no_order']              = $no_order; 
+      $transaksi['cust_po_number']        = $request->cust_po_number;
       $transaksi['pelanggan_id']          = $request->id_pelanggan;
       $transaksi['jenis_bayar']           = $request->jenis_bayar;  
       $transaksi['tanggal_order']         = $request->tanggal_order;  

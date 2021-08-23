@@ -19,6 +19,7 @@
           <th>No</th>
           <th>Tanggal</th>
           <th>Nomor Order</th> 
+          <th>Customer PO Number</th> 
           <th>Pelanggan</th>
           <th>Pembayaran</th>
           <th>Biaya Operasional</th>
@@ -34,11 +35,13 @@
           @php
             $no=1;   
           @endphp
+          @if(!empty($listordermasuk))
           @foreach ($listordermasuk as $item) 
           <tr>
             <td>{{$no++}}</td>
             <td>{{$item->tanggal_order}}</td>
             <td>{{$item->no_order}}</td> 
+            <td>{{$item->cust_po_number}}</td> 
             <td>{{$item->pelanggan->nama_pelanggan}}</td>
             <td>{{$item->jenis_bayar}}</td>
             <td>{{$item->biaya_operasional}}</td>
@@ -54,6 +57,7 @@
             </td> 
           </tr>
           @endforeach
+          @endif
         </tbody>
       </table>
     </div>
