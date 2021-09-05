@@ -37,7 +37,7 @@
           @endphp
           @if(!empty($listordermasuk))
           @foreach ($listordermasuk as $item) 
-          <tr>
+          <tr id="row_{{$item->id}}">
             <td>{{$no++}}</td>
             <td>{{$item->tanggal_order}}</td>
             <td>{{$item->no_order}}</td> 
@@ -52,8 +52,8 @@
             <td>Rp.{{number_format($item->jumlah_total_laba_bersih)}}</td>  
             <td>
               <a href="{{route('admin.ListOrderMasuk')}}/{{$item->id}}/LM" target="_blank" class="btn btn-info" >Laporan Masuk</a> 
-              <a href="{{route('admin.ListOrderMasuk')}}/{{$item->id}}/LK" target="_blank" class="btn btn-info" >Laporan Keluar</i></a> 
-              </button>
+              <a href="{{route('admin.ListOrderMasuk')}}/{{$item->id}}/LK" target="_blank" class="btn btn-info" >Laporan Keluar</i></a>
+              <button type="submit" name="delete" id="delete" data-id="{{$item->id}}" value="{{$item->id}}" class="btn btn-danger delete" > <i class="fa fa-trash"> Hapus</i></button>
             </td> 
           </tr>
           @endforeach
@@ -91,6 +91,45 @@
         ]
 
       });
+  // delete
+  $('.delete').on('click', function(){
+    var id  = $(this).val();
+    // console.log('id delete : ' + id);
+    var APP_URL = {!! json_encode(url('')) !!}
+    let _url = APP_URL + `/admin/deleteListOrderMasuk/${id}`;
+    let _token   = $('meta[name="csrf-token"]').attr('content');
+
+    if (confirm("Hapus Data?")) {
+        $.ajax({
+          url: _url,
+          type: 'GET',
+          data: {
+            _token: _token
+          },
+          success: function(response) {
+            toastr.options = {
+                "closeButton": true,
+                "debug": false,
+                "progressBar": true,
+                "positionClass": "toast-top-full-width",
+                "onclick": null,
+                "showDuration": "400",
+                "hideDuration": "1000",
+                "timeOut": "7000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+              }
+            toastr.success('Data Berhasil Dihapus!','SUKSES');
+            $("#row_"+id).remove();
+          }
+        });
+    }
+    return false;
+
+    });
   });
 </script>
 @endsection 

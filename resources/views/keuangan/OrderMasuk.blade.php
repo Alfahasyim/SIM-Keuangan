@@ -189,11 +189,11 @@
           <table> 
             <tr>
               <td><label for="">Biaya Operasional</label></td>
-              <td><input type="number" class="form-control" name="biaya_operasional" id="biaya_operasional"></td>
+              <td><input type="number" class="form-control" name="biaya_operasional" id="biaya_operasional" required=""></td>
             </tr> 
             <tr>
               <td><label for="">Keterangan</label></td>
-              <td><textarea class="form-control" name="keterangan"></textarea></td>
+              <td><textarea class="form-control" name="keterangan" required=""></textarea></td>
             </tr> 
             <tr>
               <td><label for="">Total</label></td>

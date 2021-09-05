@@ -155,7 +155,7 @@
       <div class="ibox-content">
       <form id="form-store" method="post" action="{{route('admin.storeOrderMasuk')}}" name="form-observasi">
         {{ csrf_field() }}
-        <input type="hidden"   name="cust_po_number" id="cust_po_number"> 
+        <input type="hidden"  name="cust_po_number" id="cust_po_number"> 
         <input type="hidden" name="id_pelanggan" id="id_pelanggan"> 
         <input type="hidden" name="jenis_bayar" id="jenis_bayar"> 
         <input type="hidden" name="tanggal_order" id="tanggal_order" value="<?php echo date('Y-m-d'); ?>"> 
@@ -189,11 +189,11 @@
           <table> 
             <tr>
               <td><label for="">Biaya Operasional</label></td>
-              <td><input type="number" class="form-control" name="biaya_operasional" id="biaya_operasional"></td>
+              <td><input type="number" class="form-control" name="biaya_operasional" id="biaya_operasional" required=""></td>
             </tr> 
             <tr>
               <td><label for="">Keterangan</label></td>
-              <td><textarea class="form-control" name="keterangan"></textarea></td>
+              <td><textarea class="form-control" name="keterangan" required=""></textarea></td>
             </tr> 
             <tr>
               <td><label for="">Total</label></td>

@@ -7,6 +7,7 @@ Use App\User;
 use Validator;
 use App\Mbarang;
 Use App\OrderMasuk;
+Use App\DetailOrderMasuk;
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\DB;
@@ -27,7 +28,7 @@ class OrderMasukController extends Controller
       $jumlah_laba_bersih = $jumlah_total_laba_kotor - $jumlah_biaya_operasional;
 
        $validator = Validator::make($request->all(),[  
-        'cust_po_number' => ['required'],
+        // 'cust_po_number' => ['required'],
         'jenis_bayar' => ['required'],
         'tanggal_order' => ['required'],
         'kode_barang' => ['required'],
@@ -85,5 +86,13 @@ class OrderMasukController extends Controller
       }else if(Auth::user()->level == "keuangan") {
         return redirect()->route('keuangan.OrderMasuk');
       }
+    }
+
+    public function deleteListOrderMasuk($id)
+    {
+    $data = OrderMasuk::find($id)->delete();
+    $dataDetail = DetailOrderMasuk::where('order_id', $id)->delete();
+
+    return response()->json(['success'=>'Post Deleted successfully']);
     }
 }

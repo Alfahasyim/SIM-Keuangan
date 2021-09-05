@@ -21,7 +21,7 @@
                   <li>
                       <h2 class="no-margins">Total Order : {{$total_order}}</h2> 
                   </li> <li>
-                      <h2 class="no-margins">Total Pendapatan : Rp.{{number_format($order->sum('subtot_laba_bersih'))}}</h2> 
+                      <h2 class="no-margins">Total Pendapatan : Rp.{{number_format($order->sum('jumlah_total_laba_bersih'))}}</h2> 
                   </li>  
                 </ul>
             </div>

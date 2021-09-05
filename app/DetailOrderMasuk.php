@@ -8,7 +8,7 @@ class DetailOrderMasuk extends Model
 {
   protected $table = 'detail_order_masuk';
   protected $guarded = [];
-  protected $appends = ['sub_total_harga_jual_pcs','sub_total_harga_modal_pcs','sub_total_laba_kotor_pcs'];
+  protected $appends = ['sub_total_harga_jual_pcs','sub_total_harga_modal_pcs','sub_total_laba_kotor_pcs','LabaPCS'];
 
   public function order_masuk()
   {
@@ -18,6 +18,14 @@ class DetailOrderMasuk extends Model
   public function barang()
   {
     return $this->belongsTo(Mbarang::class,'kode_barang','kode_barang');
+  }
+
+  public function getLabaPCSAttribute()
+  {
+    $LabaPCS = 0; 
+    $LabaPCS = $this->harga_jual_pcs-$this->harga_modal_pcs; 
+    return $LabaPCS;
+
   }
 
   public function getSubTotalHargaJualPcsAttribute()

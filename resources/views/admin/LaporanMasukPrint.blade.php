@@ -67,7 +67,7 @@
 				        <td>Rp.{{number_format($item->sub_total_harga_jual_pcs)}}</td> 
 				        <td>Rp.{{number_format($item->harga_modal_pcs)}}</td> 
 				        <td>Rp.{{number_format($item->sub_total_harga_modal_pcs)}}</td> 
-				        <td>Rp.{{number_format($item->laba_pcs)}}</td> 
+				        <td>Rp.{{number_format($item->LabaPCS)}}</td> 
 				        <td>Rp.{{number_format($item->sub_total_laba_kotor_pcs)}}</td>  
 				      </tr>
 				    @endforeach

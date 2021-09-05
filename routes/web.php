@@ -57,6 +57,8 @@ Route::group(['middleware' => 'auth'], function(){
     // Transaksi Order Masuk 
     Route::post('admin/storeOrderMasuk','OrderMasukController@storeOrderMasuk')->name('admin.storeOrderMasuk');
     Route::get('admin/storeOrderMasuk/{kode_barang}','OrderMasukController@cekHarga'); 
+    Route::get('admin/deleteListOrderMasuk/{id}','OrderMasukController@deleteListOrderMasuk'); 
+
   });
 
   // Route untuk Keuangan
@@ -72,6 +74,8 @@ Route::group(['middleware' => 'auth'], function(){
     // Transaksi Order Masuk 
     Route::post('keuangan/storeOrderMasuk','OrderMasukController@storeOrderMasuk')->name('keuangan.storeOrderMasuk');
     Route::get('keuangan/storeOrderMasuk/{kode_barang}','OrderMasukController@cekHarga'); 
+    Route::get('keuangan/deleteListOrderMasuk/{id}','OrderMasukController@deleteListOrderMasuk'); 
+    
   });
 
  });
