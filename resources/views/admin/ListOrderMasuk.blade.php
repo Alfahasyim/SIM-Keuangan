@@ -44,7 +44,7 @@
             <td>{{$item->cust_po_number}}</td> 
             <td>{{$item->pelanggan->nama_pelanggan}}</td>
             <td>{{$item->jenis_bayar}}</td>
-            <td>{{$item->biaya_operasional}}</td>
+            <td>Rp.{{number_format($item->biaya_operasional)}}</td>
             <td>{{$item->keterangan}}</td>
             <td>Rp.{{number_format($item->jumlah_total_harga_jual)}}</td>  
             <td>Rp.{{number_format($item->jumlah_total_harga_modal)}}</td>  

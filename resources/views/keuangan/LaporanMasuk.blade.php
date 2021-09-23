@@ -20,7 +20,8 @@
           <div class="col-sm-6">
             <h5>From:</h5>
             <address>
-              <strong>{{$data_order->pelanggan->nama_pelanggan}}</strong>
+              <strong>{{$data_order->pelanggan->nama_pelanggan}}</strong><br>
+              {{$data_order->pelanggan->alamat}}
             </address>
           </div>
 
