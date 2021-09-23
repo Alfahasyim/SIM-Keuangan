@@ -24,6 +24,7 @@
           <th>Pembayaran</th>
           <th>Biaya Operasional</th>
           <th>Keterangan</th>
+          <th>Sisa Kembali</th>
           <th>Total Harga Jual</th>  
           <th>Total Harga Modal</th>  
           <th>Total Laba Kotor</th>  
@@ -46,6 +47,7 @@
             <td>{{$item->jenis_bayar}}</td>
             <td>Rp.{{number_format($item->biaya_operasional)}}</td>
             <td>{{$item->keterangan}}</td>
+            <td>Rp.{{number_format($item->sisa_kembali)}}</td>
             <td>Rp.{{number_format($item->jumlah_total_harga_jual)}}</td>  
             <td>Rp.{{number_format($item->jumlah_total_harga_modal)}}</td>  
             <td>Rp.{{number_format($item->jumlah_total_laba_kotor)}}</td>  

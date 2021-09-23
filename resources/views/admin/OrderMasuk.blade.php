@@ -196,6 +196,10 @@
               <td><textarea class="form-control" name="keterangan" required=""></textarea></td>
             </tr> 
             <tr>
+              <td><label for="">Sisa Kembali</label></td>
+              <td><input type="number" class="form-control" name="sisa_kembali" id="sisa_kembali" required=""></td>
+            </tr> 
+            <tr>
               <td><label for="">Total</label></td>
               <td><input type="number" class="form-control" name="add_grand_total" id="add_grand_total" disabled></td>
             </tr>

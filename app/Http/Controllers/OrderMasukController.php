@@ -61,6 +61,7 @@ class OrderMasukController extends Controller
       $transaksi['subtot_laba_bersih']    = $jumlah_laba_bersih;  
       $transaksi['biaya_operasional']     = $request->biaya_operasional;  
       $transaksi['keterangan']            = $request->keterangan;  
+      $transaksi['sisa_kembali']          = $request->sisa_kembali;  
       $transaksi['edited_by']             = Auth::user()->id;
       $ordermasuk                         = OrderMasuk::create($transaksi);
       

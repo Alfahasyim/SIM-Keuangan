@@ -95,6 +95,10 @@
 		        <td>Rp.{{number_format($data_order->biaya_operasional)}}</td>
 		      </tr>
 		      <tr>
+		        <td><strong>Sisa Kembali :</strong></td>
+		        <td>Rp.{{number_format($data_order->sisa_kembali)}}</td>
+		      </tr>
+		      <tr>
 		        <td><strong>Jumlah Total Laba Bersih :</strong></td>
 		        <td>Rp.{{number_format($data_order->jumlah_total_laba_bersih)}}</td>
 		      </tr>

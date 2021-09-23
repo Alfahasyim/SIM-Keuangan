@@ -58,7 +58,7 @@ class OrderMasuk extends Model
       $jumlah_total_laba_kotor+= $value->qty*$value->laba_pcs;
     } 
     
-    $jumlah_total_laba_bersih+= $jumlah_total_laba_kotor - $this->biaya_operasional;
+    $jumlah_total_laba_bersih+= $jumlah_total_laba_kotor - $this->biaya_operasional - $this->sisa_kembali;
 
     return $jumlah_total_laba_bersih;
   }
